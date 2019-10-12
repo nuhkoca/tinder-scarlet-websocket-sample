@@ -6,7 +6,6 @@ plugins {
 }
 
 val javaVersion: JavaVersion by extra { JavaVersion.VERSION_1_8 }
-val baseUrl: String by project
 
 android {
     compileSdkVersion(extra["compileSdkVersion"] as Int)
@@ -30,10 +29,6 @@ android {
             isMinifyEnabled = false
             isDebuggable = true
         }
-    }
-
-    buildTypes.forEach {
-        it.buildConfigField("String", "baseUrl", baseUrl)
     }
 
     sourceSets {
@@ -69,14 +64,10 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(Dependencies.kotlin)
-    implementation(Dependencies.core_ktx)
+    api(project(Modules.core))
+    api(project(Modules.data))
 
-    implementation(Dependencies.scarlet)
-    implementation(Dependencies.scarlet_websocket)
-    implementation(Dependencies.scarlet_moshi)
-    implementation(Dependencies.scarlet_lifecycle)
-    implementation(Dependencies.scarlet_rxjava)
+    api(Dependencies.kotlin)
 
     api(Dependencies.dagger_android_support)
     kapt(Dependencies.dagger_compiler)

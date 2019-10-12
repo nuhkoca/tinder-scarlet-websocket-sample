@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/domain" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
