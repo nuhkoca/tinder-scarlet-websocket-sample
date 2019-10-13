@@ -12,6 +12,5 @@ class WebSocketEventUseCase @Inject constructor(
 
     override fun execute(params: None): Flowable<WebSocketEvent> {
         return coinbaseRepository.observeWebSocketEvent()
-            .filter { it is WebSocketEvent.OnConnectionOpened }
     }
 }

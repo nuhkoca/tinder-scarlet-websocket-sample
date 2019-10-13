@@ -18,4 +18,5 @@ class CoinbaseRepositoryImpl @Inject constructor(
 
     override fun observeWebSocketEvent(): Flowable<WebSocketEvent> =
         remoteDataSource.observeWebSocketEvent()
+            .filter { it is WebSocketEvent.OnConnectionOpened }
 }

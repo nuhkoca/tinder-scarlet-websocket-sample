@@ -16,10 +16,10 @@ import com.tinder.scarlet.websocket.okhttp.OkHttpWebSocket
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
-import java.util.concurrent.TimeUnit.SECONDS
-import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import java.util.concurrent.TimeUnit.SECONDS
+import javax.inject.Singleton
 
 @Module(includes = [StaticDataModule::class])
 abstract class DataModule {
@@ -56,8 +56,7 @@ abstract class DataModule {
         fun provideScarletInstance(
             protocol: OkHttpWebSocket,
             configuration: Scarlet.Configuration
-        ) =
-            Scarlet(protocol, configuration)
+        ) = Scarlet(protocol, configuration)
 
         @Provides
         @Singleton
@@ -73,6 +72,7 @@ abstract class DataModule {
         @JvmStatic
         fun provideMoshi(): Moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
+            .add(DateTypeAdapter())
             .build()
 
         @Provides
@@ -82,14 +82,13 @@ abstract class DataModule {
             moshi: Moshi,
             lifecycle: Lifecycle,
             backoffStrategy: ExponentialWithJitterBackoffStrategy
-        ) =
-            Scarlet.Configuration(
-                lifecycle = lifecycle,
-                backoffStrategy = backoffStrategy,
-                messageAdapterFactories = listOf(MoshiMessageAdapter.Factory(moshi)),
-                streamAdapterFactories = listOf(RxJava2StreamAdapterFactory()),
-                debug = true
-            )
+        ) = Scarlet.Configuration(
+            lifecycle = lifecycle,
+            backoffStrategy = backoffStrategy,
+            messageAdapterFactories = listOf(MoshiMessageAdapter.Factory(moshi)),
+            streamAdapterFactories = listOf(RxJava2StreamAdapterFactory()),
+            debug = true
+        )
 
         @Provides
         @Singleton
