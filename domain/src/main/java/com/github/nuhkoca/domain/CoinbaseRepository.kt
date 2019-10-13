@@ -1,17 +1,12 @@
-package com.github.nuhkoca.data
+package com.github.nuhkoca.domain
 
+import com.github.nuhkoca.data.Subscribe
+import com.github.nuhkoca.data.Ticker
 import com.tinder.scarlet.websocket.WebSocketEvent
-import com.tinder.scarlet.ws.Receive
-import com.tinder.scarlet.ws.Send
 import io.reactivex.Flowable
 
-interface CoinbaseService {
-    @Send
+interface CoinbaseRepository {
     fun sendSubscribe(subscribe: Subscribe)
-
-    @Receive
     fun observeTicker(): Flowable<Ticker>
-
-    @Receive
     fun observeWebSocketEvent(): Flowable<WebSocketEvent>
 }

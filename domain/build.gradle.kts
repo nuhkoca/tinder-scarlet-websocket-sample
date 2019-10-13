@@ -69,10 +69,10 @@ dependencies {
 
     api(Dependencies.kotlin)
 
+    implementation(Dependencies.rxjava)
+
     api(Dependencies.dagger_android_support)
     kapt(Dependencies.dagger_compiler)
 
-    testImplementation(TestDependencies.junit)
-    androidTestImplementation(TestDependencies.test_core)
-    androidTestImplementation(TestDependencies.rules)
+    api(Dependencies.scarlet_websocket)
 }

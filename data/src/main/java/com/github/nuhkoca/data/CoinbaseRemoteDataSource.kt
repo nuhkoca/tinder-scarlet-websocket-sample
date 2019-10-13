@@ -1,5 +1,6 @@
 package com.github.nuhkoca.data
 
+import com.tinder.scarlet.websocket.WebSocketEvent
 import io.reactivex.Flowable
 import javax.inject.Inject
 
@@ -11,7 +12,6 @@ class CoinbaseRemoteDataSource @Inject constructor(
 
     override fun observeTicker(): Flowable<Ticker> = coinbaseService.observeTicker()
 
-    override fun observeSocketEvent() {
-        coinbaseService.observeOnConnectionOpenedEvent()
-    }
+    override fun observeWebSocketEvent(): Flowable<WebSocketEvent> =
+        coinbaseService.observeWebSocketEvent()
 }

@@ -7,8 +7,16 @@ object Dependencies {
         "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}"
     const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
 
+    // Lifecycle
+    const val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+    const val lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime:${Versions.lifecycle}"
+    const val lifecycle_compiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}"
+    const val lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
+
     // RxJava
+    const val rx_android = "io.reactivex.rxjava2:rxandroid:${Versions.rx_android}"
     const val rxjava = "io.reactivex.rxjava2:rxjava:${Versions.rxjava}"
+    const val rx_kotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rx_kotlin}"
 
     // Scarlet
     const val scarlet = "com.github.tinder.scarlet:scarlet:${Versions.scarlet}"
@@ -29,6 +37,12 @@ object Dependencies {
         "com.google.dagger:dagger-android-processor:${Versions.dagger}"
     const val dagger_compiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
     const val javax_annotation = "org.glassfish:javax.annotation:${Versions.javax}"
+
+    // Leakcanary
+    const val leakcanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakcanary}"
+
+    // Timber
+    const val timber_kt = "com.github.ajalt:timberkt:${Versions.timberkt}"
 }
 
 object TestDependencies {

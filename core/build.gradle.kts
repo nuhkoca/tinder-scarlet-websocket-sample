@@ -66,10 +66,14 @@ dependencies {
 
     implementation(Dependencies.kotlin)
 
+    implementation(Dependencies.lifecycle_extensions)
+
     implementation(Dependencies.dagger_android_support)
     kapt(Dependencies.dagger_compiler)
 
-    testImplementation(TestDependencies.junit)
-    androidTestImplementation(TestDependencies.test_core)
-    androidTestImplementation(TestDependencies.rules)
+    implementation(Dependencies.rx_android)
+
+    implementation(Dependencies.timber_kt)
+
+    debugImplementation(Dependencies.leakcanary)
 }

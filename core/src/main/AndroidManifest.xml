@@ -1,2 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.nuhkoca.core" />
+    package="com.github.nuhkoca.core">
+
+  <application>
+    <provider
+        android:name=".util.provider.TimberInitProvider"
+        android:authorities="com.github.nuhkoca.core.util.provider.TimberInitProvider"
+        android:exported="false"
+        android:multiprocess="true" />
+  </application>
+</manifest>

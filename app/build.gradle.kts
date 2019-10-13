@@ -73,12 +73,20 @@ dependencies {
 
     api(project(Modules.core))
     api(project(Modules.data))
+    api(project(Modules.domain))
 
     api(Dependencies.kotlin)
     implementation(Dependencies.material)
     implementation(Dependencies.appcompat)
     implementation(Dependencies.core_ktx)
     implementation(Dependencies.constraint_layout)
+
+    implementation(Dependencies.rx_kotlin)
+
+    api(Dependencies.lifecycle_extensions)
+    implementation(Dependencies.lifecycle_runtime)
+    kapt(Dependencies.lifecycle_compiler)
+    implementation(Dependencies.lifecycle_viewmodel)
 
     implementation(Dependencies.dagger)
     implementation(Dependencies.dagger_android)
@@ -89,10 +97,20 @@ dependencies {
 
     api(Dependencies.scarlet)
     api(Dependencies.scarlet_websocket)
+    api(Dependencies.scarlet_moshi)
 
-    testImplementation(TestDependencies.junit)
-    androidTestImplementation(TestDependencies.test_core)
-    androidTestImplementation(TestDependencies.rules)
+    api(Dependencies.timber_kt)
+
+    testImplementation(TestDependencies.test_core)
+    testImplementation(TestDependencies.arch_core)
+    testImplementation(TestDependencies.rules)
+    testImplementation(TestDependencies.runner)
+    testImplementation(TestDependencies.truth)
+    testImplementation(TestDependencies.truth_ext)
+    testImplementation(TestDependencies.mockito)
+
+    androidTestImplementation(TestDependencies.junit)
+    androidTestImplementation(TestDependencies.espresso_core)
 }
 
 fun getSemVer(): String {
