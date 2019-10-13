@@ -7,16 +7,30 @@
     tools:context=".ui.MainActivity"
     >
 
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/leftGuideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_begin="16dp"
+      />
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/rightGuideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_end="16dp"
+      />
+
   <TextView
       android:id="@+id/tvResult"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:paddingStart="16dp"
-      android:paddingEnd="16dp"
       android:textSize="16sp"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/rightGuideline"
+      app:layout_constraintStart_toEndOf="@id/leftGuideline"
       app:layout_constraintTop_toTopOf="parent"
       />
 
