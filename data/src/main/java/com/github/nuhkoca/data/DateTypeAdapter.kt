@@ -5,6 +5,7 @@ import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.JsonReader
 import com.squareup.moshi.JsonWriter
 import com.squareup.moshi.ToJson
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -19,7 +20,7 @@ class DateTypeAdapter : JsonAdapter<Date>() {
         return try {
             val dateAsString = reader.nextString()
             serverFormatter.parse(dateAsString)
-        } catch (e: Exception) {
+        } catch (e: ParseException) {
             null
         }
     }
@@ -30,7 +31,7 @@ class DateTypeAdapter : JsonAdapter<Date>() {
     }
 
     companion object {
-        private const val SERVER_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.ssZ"
+        private const val SERVER_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
         private const val APP_DATE_FORMAT = "yyyy-MM-dd"
     }
 }

@@ -16,10 +16,11 @@ import com.tinder.scarlet.websocket.okhttp.OkHttpWebSocket
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import java.util.Date
 import java.util.concurrent.TimeUnit.SECONDS
 import javax.inject.Singleton
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 @Module(includes = [StaticDataModule::class])
 abstract class DataModule {
@@ -72,7 +73,7 @@ abstract class DataModule {
         @JvmStatic
         fun provideMoshi(): Moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
-            .add(DateTypeAdapter())
+            .add(Date::class.java, DateTypeAdapter().nullSafe())
             .build()
 
         @Provides
