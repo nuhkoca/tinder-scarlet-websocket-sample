@@ -33,7 +33,7 @@ object Versions {
     const val scarlet = "0.2.4"
 
     // Static code analysis
-    const val detekt = "1.1.1"
+    const val detekt = "1.22.0"
     const val ben_manes = "0.26.0"
     const val ktlint = "9.0.0"
 
