@@ -13,7 +13,7 @@ object Versions {
 
     // RxJava
     const val rx_android = "2.1.1"
-    const val rxjava = "2.2.13"
+    const val rxjava = "2.2.21"
     const val rx_kotlin = "2.4.0"
 
     // Lifecycle
