@@ -4,7 +4,7 @@ object Versions {
 
     // Gradle plugins
     const val gradle_plugin = "3.6.4"
-    const val kotlin_gradle_plugin = "1.3.50"
+    const val kotlin_gradle_plugin = "1.8.21"
 
     // UI
     const val appcompat = "1.6.1"
