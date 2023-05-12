@@ -8,7 +8,7 @@ object Versions {
 
     // UI
     const val appcompat = "1.6.1"
-    const val material = "1.1.0-beta01"
+    const val material = "1.9.0"
     const val constraint_layout = "2.1.4"
 
     // RxJava
