@@ -38,7 +38,7 @@ object Versions {
     const val ktlint = "9.0.0"
 
     // Testing
-    const val test_core = "1.2.0"
+    const val test_core = "1.5.0"
     const val runner = "1.2.0"
     const val rules = "1.2.0"
     const val junit = "1.1.5"
