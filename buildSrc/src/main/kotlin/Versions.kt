@@ -27,7 +27,7 @@ object Versions {
     const val timberkt = "1.5.1"
 
     // LeakCanary
-    const val leakcanary = "2.10"
+    const val leakcanary = "2.11"
 
     // Scarlet
     const val scarlet = "0.2.4"
