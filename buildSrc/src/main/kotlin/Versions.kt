@@ -3,7 +3,7 @@ object Versions {
     const val core_ktx = "1.12.0"
 
     // Gradle plugins
-    const val gradle_plugin = "8.1.2"
+    const val gradle_plugin = "8.1.3"
     const val kotlin_gradle_plugin = "1.9.20"
 
     // UI
