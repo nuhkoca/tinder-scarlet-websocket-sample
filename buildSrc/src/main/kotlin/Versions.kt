@@ -1,6 +1,6 @@
 object Versions {
     // Kotlin
-    const val core_ktx = "1.19.0"
+    const val core_ktx = "1.19.1"
 
     // Gradle plugins
     const val gradle_plugin = "9.4.1"
